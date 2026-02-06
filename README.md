@@ -34,5 +34,4 @@ A simple and responsive **React News Application** that fetches and displays the
 
 This project uses an API key stored in an environment file.
 
-Create a `.env.local` file in the root directory and add:
 
