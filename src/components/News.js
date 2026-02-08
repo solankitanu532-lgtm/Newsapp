@@ -17,7 +17,7 @@ const News =(props)=>{
    
   const updateNews = async()=>{
     props.setProgress(10);
-    const url = `https://newsapi.org/v2/top-headlines?q=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${props.page}&pageSize=${props.pageSize}`;
+    const url = `https://newsapi.org/v2/top-headlines?q=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
     setLoading(true)
     let data = await fetch(url);
      props.setProgress(40);
@@ -30,7 +30,7 @@ const News =(props)=>{
     props.setProgress(100);
   }
   useEffect(()=>{
-     document.title = `${capitalizeFirstLetter(props .category)} - NewsMonkey`;
+     document.title = `${capitalizeFirstLetter(props.category)} - NewsMonkey`;
    updateNews();
    // eslint-disable-next-line
   },[])
@@ -76,7 +76,7 @@ const News =(props)=>{
               
             {/* <div className="container d-flex justify-content-between">
             <button disabled={page<=1} type="button" className="btn btn-dark" onClick={handlePrevClick}> &larr; Previous</button>
-            <button disabled={page + 1 > Math.ceil(totalResults/props .pageSize)} type="button" className="btn btn-dark" onClick={handleNextClick}>Next &rarr; </button>
+            <button disabled={page + 1 > Math.ceil(totalResults/props.pageSize)} type="button" className="btn btn-dark" onClick={handleNextClick}>Next &rarr; </button>
          </div> */}
       </>
     )
